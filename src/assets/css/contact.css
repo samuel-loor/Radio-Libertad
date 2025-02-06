@@ -1,0 +1,128 @@
+.contact__section {
+  width: 100%;
+  max-width: 85%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact__header {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.contact__subtitle {
+  color: #333;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  margin-bottom: 0.5rem;
+}
+
+.contact__role {
+  color: #666;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+.contact__list {
+  display: grid;
+  gap: clamp(0.6rem, 2vw, 1.2rem);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background: #f8f8f8;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.contact__item:hover {
+  transform: translateX(10px);
+  background: #fff5eb;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1);
+}
+
+.icon__container {
+  width: clamp(40px, 5vw, 50px);
+  height: clamp(40px, 5vw, 50px);
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.contact__item:hover .icon__container {
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 50%;
+  height: 50%;
+  fill: white;
+}
+
+.contact__info {
+  flex-grow: 1;
+}
+
+.contact__label {
+  color: #288e42;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact__value {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact__value:hover {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 720px) {
+  .contact__item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .icon__container {
+    margin-top: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact__section {
+    padding: 1rem;
+  }
+
+  .contact__item:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__item,
+  .icon__container {
+    transition: none;
+  }
+
+  .contact__item:hover {
+    transform: none;
+  }
+}

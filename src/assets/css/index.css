@@ -1,0 +1,29 @@
+:root {
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+  --primary-color: #ff6b00;
+  --secondary-color: #ececf0;
+  --third-color: #19662c;
+  --color-black: #000000;
+  --color-white: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--tipo-principal);
+  color: var(--color);
+}

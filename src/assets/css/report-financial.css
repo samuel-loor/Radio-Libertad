@@ -1,0 +1,77 @@
+.report {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.report__content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.report__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.report__title {
+  color: orange;
+  font-size: 24px;
+  padding-bottom: 1rem;
+}
+
+.report__downloads {
+  list-style: none;
+  padding: 0;
+}
+
+.report__downloads li {
+  margin: 10px 0;
+}
+
+.report__download-link {
+  display: block;
+  padding: 10px;
+  background: darkgreen;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.report__download-link:hover {
+  background: green;
+}
+
+.open__report__button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.open__report__button:hover {
+  background-color: darkorange;
+}

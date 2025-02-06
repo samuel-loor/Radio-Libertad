@@ -1,0 +1,9 @@
+.banner {
+  padding-top: 2.5rem;
+}
+
+.schedule__hosts-content,
+.buzon__content,
+.contact__section {
+  margin: 2rem auto;
+}
