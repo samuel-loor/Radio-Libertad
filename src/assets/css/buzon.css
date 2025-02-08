@@ -101,3 +101,23 @@
     min-height: 150px;
   }
 }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background:  var(--primary-color);  
+  color: white;
+  padding: .8rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

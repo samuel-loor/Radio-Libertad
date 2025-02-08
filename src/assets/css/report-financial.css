@@ -32,7 +32,7 @@
 }
 
 .report__title {
-  color: orange;
+  color: var(--primary-color);
   font-size: 24px;
   padding-bottom: 1rem;
 }

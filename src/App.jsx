@@ -7,6 +7,7 @@ import { ReportFinancial } from './components/ReportFinancial';
 import { Schedule } from './components/Schedule';
 import { Buzon } from './components/Buzon';
 import { Contact } from './components/Contact';
+import { AudioPlayer } from './components/AudioPlayer';
 
 function App() {
   const [isReportOpen, setIsReportOpen] = useState(false);
@@ -21,6 +22,7 @@ function App() {
       <Schedule />
       <Buzon />
       <Contact />
+      <AudioPlayer />
     </>
   );
 }

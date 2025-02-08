@@ -46,15 +46,15 @@ export function ReportFinancial({ isReportOpen, setIsReportOpen }) {
             <ul className='report__downloads'>
               <LinkDownload
                 title={'Rendición de cuentas 2024'}
-                url={'/src/assets/document/rendicion-cuentas-libertad-2023.pdf'}
+                url={'/document/rendicion-cuentas-libertad-2023.pdf'}
               />
               <LinkDownload
                 title={'Rendición de cuentas 2023'}
-                url={'/src/assets/document/rendicion-cuentas-libertad-2023.pdf'}
+                url={'/document/rendicion-cuentas-libertad-2023.pdf'}
               />
               <LinkDownload
                 title={'Rendición de cuentas 2022'}
-                url={'/src/assets/document/rendicion-cuentas-libertad-2023.pdf'}
+                url={'/document/rendicion-cuentas-libertad-2023.pdf'}
               />
             </ul>
           </div>

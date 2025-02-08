@@ -37,7 +37,7 @@ export function Header({ onOpenReport }) {
             </li>
             <li className='header__menu-item'>
               <a
-                href='/src/assets/document/codigo-etica-2024.pdf'
+                href='/document/codigo-etica-2024.pdf'
                 target='__blank'
                 rel='noopener noreferrer'
               >

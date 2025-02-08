@@ -1,0 +1,156 @@
+.audio-player {
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.play-pause, .mute {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.play-pause:hover, .mute:hover {
+  transform: scale(1.2);
+}
+
+.volume {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  margin: 0 10px;
+  height: 4px;
+  border-radius: 5px;
+  background: #ddd;
+}
+
+.volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #1f2b1f;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.radio-status {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  position: static;
+  width: 10px;
+  height: 10px;
+  background: #4caf50;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 1s infinite;
+  min-width: 10px; /* Evita que se haga más pequeña que 10px */
+  min-height: 10px; /* Evita que se haga más pequeña que 10px */
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.5);
+      opacity: 0.7;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  .audio-player {
+    padding: 6px;
+    height: 100px;
+  }
+
+  .player-info {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .play-pause, .mute {
+    font-size: 20px;
+    margin: 0;
+  }
+  .volume {
+    width: 80px;
+    margin-bottom: 0.8em;
+  }
+
+}
+
+/*Ecualizador*/
+.equalizer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.bar {
+  width: 5px;
+  height: 10px;
+  background-color: #4caf50;
+  margin: 0 2px;
+  transition: height 0.1s ease; 
+}
+
+@keyframes beat {
+  0%, 100% {
+      height: 10px;
+  }
+  50% {
+      height: 50px;
+  }
+}
+
+.bar.animate {
+  animation: beat 0.5s infinite;
+}
