@@ -3,7 +3,17 @@
 }
 
 .schedule__hosts-content,
-.buzon__content,
-.contact__section {
+.buzon__content {
   margin: 2rem auto;
+}
+
+.contact__section {
+  margin: auto;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 480px) {
+  .contact__section {
+    margin-bottom: 8rem;
+  }
 }

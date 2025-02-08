@@ -11,6 +11,7 @@ import { AudioPlayer } from './components/AudioPlayer';
 
 function App() {
   const [isReportOpen, setIsReportOpen] = useState(false);
+
   return (
     <>
       <Header onOpenReport={() => setIsReportOpen(true)} />

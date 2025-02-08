@@ -1,8 +1,5 @@
 import '../assets/css/audio-player.css';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useRef } from 'react';
-
+import { useEffect, useState, useRef } from 'react';
 
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
@@ -59,7 +56,6 @@ export function AudioPlayer() {
     setBars(Array(12).fill(10));
   };
 
-
   useEffect(() => {
     if (isPlaying) {
       startEqualizerAnimation();
@@ -68,44 +64,69 @@ export function AudioPlayer() {
     }
 
     return () => clearInterval(animationInterval);
-  }, [isPlaying]);
+  });
+
+  useEffect(() => {
+    const toggleAudioHandler = () => {
+      handlePlayPause(); // Llama la función para alternar reproducción
+    };
+
+    window.addEventListener('toggle-audio', toggleAudioHandler);
+    return () => {
+      window.removeEventListener('toggle-audio', toggleAudioHandler);
+    };
+  }, []);
 
   return (
-    <section className="audio-player">
-      <div className="player-info">
-        <div className="status-indicator" role="status" aria-label="Estado de la transmisión"></div>
-        <span className="radio-status">Escuchando Radio Libertad</span>
+    <section className='audio_player'>
+      <div className='player_info'>
+        <div
+          className='status_indicator'
+          role='status'
+          aria-label='Estado de la transmisión'
+        ></div>
+        <span className='radio_status'>Escuchando Radio Libertad</span>
       </div>
       <audio
-        className="audio"
+        className='audio'
         ref={audioRef}
-        preload="none"
-        src="https://stream.zeno.fm/p5tdruzh408uv"
+        preload='none'
+        src='https://stream.zeno.fm/p5tdruzh408uv'
       >
         Tu navegador no soporta el elemento de audio.
       </audio>
-      <div className="controls">
-        <button className="play-pause" onClick={handlePlayPause} aria-label="Reproducir/Pausar" ref={playPauseBtnRef}>
-          {isPlaying ? <FaPause /> : <FaPlay />} 
+      <div className='controls'>
+        <button
+          className='play_pause'
+          onClick={handlePlayPause}
+          aria-label='Reproducir/Pausar'
+          ref={playPauseBtnRef}
+        >
+          {isPlaying ? <FaPause /> : <FaPlay />}
         </button>
-        <button className="mute" onClick={handleMuteToggle} aria-label="Silenciar/Activar sonido" ref={muteBtnRef}>
+        <button
+          className='mute'
+          onClick={handleMuteToggle}
+          aria-label='Silenciar/Activar sonido'
+          ref={muteBtnRef}
+        >
           {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
         </button>
         <input
-          type="range"
-          className="volume"
-          min="0"
-          max="1"
-          step="0.1"
+          type='range'
+          className='volume'
+          min='0'
+          max='1'
+          step='0.1'
           value={volume}
           onInput={handleVolumeChange}
-          aria-label="Control de volumen"
+          aria-label='Control de volumen'
           ref={volumeSliderRef}
         />
       </div>
-      <div className="equalizer" aria-hidden="true">
+      <div className='equalizer' aria-hidden='true'>
         {bars.map((bar, index) => (
-          <div className="bar" key={index} style={{ height: `${bar}px` }}></div>
+          <div className='bar' key={index} style={{ height: `${bar}px` }}></div>
         ))}
       </div>
     </section>

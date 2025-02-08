@@ -31,7 +31,7 @@ export function Buzon() {
       );
 
       if (response.ok) {
-        setShowModal(true); // Mostrar modal
+        setShowModal(true);
         setTimeout(() => setShowModal(false), 2000);
         setFormData({ nombre: '', apellido: '', email: '', mensaje: '' });
       } else {

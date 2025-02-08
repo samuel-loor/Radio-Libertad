@@ -6,7 +6,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.contact__title{
+.contact__title {
   margin-bottom: 1rem;
 }
 
@@ -100,9 +100,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .contact__section{
+  .contact__section {
     max-width: 90%;
-
   }
 
   .contact__item {

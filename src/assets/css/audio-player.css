@@ -1,4 +1,4 @@
-.audio-player {
+.audio_player {
   position: fixed;
   height: 50px;
   bottom: 0;
@@ -19,18 +19,20 @@
   flex: 1;
 }
 
-.play-pause, .mute {
+.play_pause,
+.mute {
   background: none;
   border: none;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   margin: 0 10px;
   transition: transform 0.3s;
 }
 
-.play-pause:hover, .mute:hover {
-  transform: scale(1.2);
+.play_pause:hover,
+.mute:hover {
+  transform: scale(1.1);
 }
 
 .volume {
@@ -53,7 +55,7 @@
   cursor: pointer;
 }
 
-.player-info {
+.player_info {
   display: flex;
   align-items: center;
   margin-right: 20px;
@@ -62,7 +64,7 @@
   font-weight: bold;
 }
 
-.radio-status {
+.radio_status {
   background: rgba(0, 0, 0, 0.6);
   padding: 5px 10px;
   border-radius: 5px;
@@ -70,7 +72,7 @@
   align-items: center;
 }
 
-.status-indicator {
+.status_indicator {
   position: static;
   width: 10px;
   height: 10px;
@@ -78,43 +80,43 @@
   border-radius: 50%;
   margin-right: 8px;
   animation: pulse 1s infinite;
-  min-width: 10px; /* Evita que se haga más pequeña que 10px */
-  min-height: 10px; /* Evita que se haga más pequeña que 10px */
+  min-width: 10px;
+  min-height: 10px;
 }
 
 @keyframes pulse {
   0% {
-      transform: scale(1);
-      opacity: 1;
+    transform: scale(1);
+    opacity: 1;
   }
   50% {
-      transform: scale(1.5);
-      opacity: 0.7;
+    transform: scale(1.5);
+    opacity: 0.7;
   }
   100% {
-      transform: scale(1);
-      opacity: 1;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
 @media screen and (max-width: 480px) {
-  
-  .audio-player {
+  .audio_player {
     padding: 6px;
-    height: 100px;
+    height: 110px;
   }
 
-  .player-info {
+  .player_info {
     font-size: 12px;
     margin-right: 10px;
   }
 
   .controls {
     flex-direction: column;
-    gap: 13px;
+    gap: 1rem;
   }
 
-  .play-pause, .mute {
+  .play_pause,
+  .mute {
     font-size: 20px;
     margin: 0;
   }
@@ -122,10 +124,8 @@
     width: 80px;
     margin-bottom: 0.8em;
   }
-
 }
 
-/*Ecualizador*/
 .equalizer {
   display: flex;
   justify-content: center;
@@ -139,15 +139,16 @@
   height: 10px;
   background-color: #4caf50;
   margin: 0 2px;
-  transition: height 0.1s ease; 
+  transition: height 0.1s ease;
 }
 
 @keyframes beat {
-  0%, 100% {
-      height: 10px;
+  0%,
+  100% {
+    height: 10px;
   }
   50% {
-      height: 50px;
+    height: 50px;
   }
 }
 

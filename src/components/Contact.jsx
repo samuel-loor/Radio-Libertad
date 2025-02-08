@@ -1,8 +1,9 @@
 import '../assets/css/contact.css';
+import { Element } from 'react-scroll';
 
 export function Contact() {
   return (
-    <section className='contact__section'>
+    <Element name='contact' className='contact__section'>
       <div className='contact__header'>
         <h1 className='contact__title'>Información de Contacto</h1>
         <h2 className='contact__subtitle'>Sandra Espinel Zambrano</h2>
@@ -81,6 +82,6 @@ export function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </Element>
   );
 }
