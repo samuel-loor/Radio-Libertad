@@ -54,7 +54,7 @@ export function Header({ onOpenReport }) {
               <Link
                 onClick={toggleMenu}
                 to='contact'
-                smmoth={true}
+                smooth={true}
                 duration={500}
               >
                 Contáctanos

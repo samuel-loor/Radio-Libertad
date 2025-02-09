@@ -19,10 +19,8 @@ export function Buzon() {
     e.preventDefault();
 
     try {
-      //http://localhost/ImpacTics/radio-libertad-react/server/guardar_mensaje.php
-      //http://pruebas2002.radiolibertad740am.com/guardar_mensaje.php
       const response = await fetch(
-        'http://localhost/ImpacTics/radio-libertad-react/server/guardar_mensaje.php',
+        'http://radiolibertad740am.com/guardar_mensaje.php',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -46,7 +44,7 @@ export function Buzon() {
     <section className='buzon__content'>
       <h2 className='buzon__title'>Buzón Ciudadano</h2>
 
-      <form className='buzon__form' onSubmit={handleSubmit}>
+      <form className='buzon__form' onSubmit={handleSubmit} >
         <div className='form__left'>
           <input
             className='input'
@@ -55,6 +53,7 @@ export function Buzon() {
             placeholder='Nombre'
             value={formData.nombre}
             onChange={handleChange}
+            autoComplete="name"
           />
           <input
             className='input'
@@ -63,6 +62,8 @@ export function Buzon() {
             placeholder='Apellido'
             value={formData.apellido}
             onChange={handleChange}
+            autoComplete="apellido"
+
           />
           <input
             className='input'
@@ -71,6 +72,7 @@ export function Buzon() {
             placeholder='Correo electrónico'
             value={formData.email}
             onChange={handleChange}
+            autoComplete="email"
           />
         </div>
         <div className='form__right'>

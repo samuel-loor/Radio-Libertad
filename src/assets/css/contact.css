@@ -8,6 +8,7 @@
 
 .contact__title {
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .contact__header {
@@ -20,13 +21,13 @@
 
 .contact__subtitle {
   color: #333;
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .contact__role {
   color: #666;
-  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  font-size: .8rem;
 }
 
 .contact__list {

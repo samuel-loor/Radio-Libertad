@@ -16,8 +16,9 @@
 
 .buzon__title {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: var(--primary-color);
+  font-size: 1.5rem;
 }
 
 .form__left,
@@ -70,6 +71,31 @@
   transform: translateY(-2px);
 }
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--primary-color);
+  color: white;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   .buzon__content {
     max-width: 90%;
@@ -99,29 +125,5 @@
 
   .textarea {
     min-height: 150px;
-  }
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--primary-color);
-  color: white;
-  padding: 0.8rem;
-  border-radius: 1rem;
-  font-size: 1rem;
-  z-index: 1000;
-  text-align: center;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

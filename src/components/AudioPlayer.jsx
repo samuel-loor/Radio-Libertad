@@ -64,7 +64,7 @@ export function AudioPlayer() {
     }
 
     return () => clearInterval(animationInterval);
-  });
+  },[isPlaying]);
 
   useEffect(() => {
     const toggleAudioHandler = () => {
