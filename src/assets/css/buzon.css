@@ -95,13 +95,6 @@
   }
 }
 
-
-@media screen and (max-width: 768px) {
-  .buzon__content {
-    max-width: 90%;
-  }
-}
-
 @media screen and (max-width: 480px) {
   .buzon__content {
     max-width: 85%;
@@ -125,5 +118,29 @@
 
   .textarea {
     min-height: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .buzon__content {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .buzon__content {
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .buzon__content {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .buzon__content {
+    max-width: 50%;
   }
 }

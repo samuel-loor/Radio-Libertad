@@ -27,7 +27,7 @@
 
 .contact__role {
   color: #666;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .contact__list {
@@ -133,5 +133,23 @@
 
   .contact__item:hover {
     transform: none;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .contact__section {
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .contact__section {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .contact__section {
+    max-width: 50%;
   }
 }

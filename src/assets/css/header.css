@@ -29,7 +29,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 .header__menu-item {
@@ -70,5 +70,25 @@
 
   .header__menu-list {
     flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .header__content{
+    padding: .9rem;
+  }
+
+  .header__menu-item{
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .header__content{
+    padding: 1.1rem;
+  }
+
+  .header__menu-item{
+    font-size: 1.4rem;
   }
 }

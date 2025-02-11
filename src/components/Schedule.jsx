@@ -1,84 +1,96 @@
 import '../assets/css/Schedule.css';
 import PropTypes from 'prop-types';
 
+const ScheduleItem = ({ time, name }) => {
+  return (
+    <div className='schedule__item'>
+      <div className='schedule__time'>{time}</div>
+      <div className='schedule__program'>{name}</div>
+    </div>
+  );
+};
+
+ScheduleItem.propTypes = {
+  time: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+const ScheduleSpecial = ({ time, name }) => {
+  return (
+    <div className='schedule__item'>
+      <div className='schedule__time'>{time}</div>
+      <div className='schedule__program-special'>{name}</div>
+    </div>
+  );
+};
+
+ScheduleSpecial.propTypes = {
+  time: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+const HostItem = ({ photo, name, shows }) => {
+  return (
+    <div className='host__item'>
+      <div className='host__photo'>
+        <img src={photo} alt={name} loading='lazy' />
+      </div>
+      <div className='host__info'>
+        <div className='host__name'>{name}</div>
+
+        {shows.map((show, index) => (
+          <div key={index} className='host__show-schedule'>
+            <div className='host__show'>{show.nameShow}</div>
+            <div className='host__schedule'>{show.schedule}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+HostItem.propTypes = {
+  photo: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  shows: PropTypes.arrayOf(
+    PropTypes.shape({
+      nameShow: PropTypes.string.isRequired,
+      schedule: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
 export function Schedule() {
-  const Schedule = ({ time, name }) => {
-    return (
-      <div className='schedule__item'>
-        <div className='schedule__time'>{time}</div>
-        <div className='schedule__program'>{name}</div>
-      </div>
-    );
-  };
-
-  Schedule.propTypes = {
-    time: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  };
-
-  const ScheduleSpecial = ({ time, name }) => {
-    return (
-      <div className='schedule__item'>
-        <div className='schedule__time'>{time}</div>
-        <div className='schedule__program-special'>{name}</div>
-      </div>
-    );
-  };
-
-  ScheduleSpecial.propTypes = {
-    time: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  };
-
-  const Host = ({ photo, name, shows }) => {
-    return (
-      <div className='host__item'>
-        <div className='host__photo'>
-          <img src={photo} alt={name} loading='lazy' />
-        </div>
-        <div className='host__info'>
-          <div className='host__name'>{name}</div>
-
-          {shows.map((show, index) => (
-            <div key={index} className='host__show-schedule'>
-              <div className='host__show'>{show.nameShow}</div>
-              <div className='host__schedule'>{show.schedule}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
-
-  Host.propTypes = {
-    photo: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    shows: PropTypes.arrayOf(
-      PropTypes.shape({
-        nameShow: PropTypes.string.isRequired,
-        schedule: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  };
-
   return (
     <section className='schedule__hosts-content'>
       <div className='schedule__container'>
         <div className='schedule__header'>NUESTRA PROGRAMACIÓN</div>
-        <Schedule time={'05H00 - 06H00'} name={'LIBERTAD CON MÚSICA POPULAR'} />
-        <Schedule time={'06H00 - 08H00'} name={'NOTICIERO ACTUALIDAD I'} />
-        <Schedule time={'08H00 - 12H00'} name={'LOS TROPICALES DEL MOMENTO'} />
-        <Schedule time={'12H00 - 13H00'} name={'LA HORA VALLENATA'} />
+        <ScheduleItem
+          time={'05H00 - 06H00'}
+          name={'LIBERTAD CON MÚSICA POPULAR'}
+        />
+        <ScheduleItem time={'06H00 - 08H00'} name={'NOTICIERO ACTUALIDAD I'} />
+        <ScheduleItem
+          time={'08H00 - 12H00'}
+          name={'LOS TROPICALES DEL MOMENTO'}
+        />
+        <ScheduleItem time={'12H00 - 13H00'} name={'LA HORA VALLENATA'} />
         <ScheduleSpecial
           time={'14H30 - 15H00'}
           name={'SEMBRANDO (Miércoles)'}
         />
-        <Schedule time={'15H00 - 16H00'} name={'ENTRE BALADA Y SALSA'} />
-        <Schedule time={'16H00 - 16H30'} name={'MÉXICO LINDO'} />
-        <Schedule time={'16H30 - 17H00'} name={'ATARDECER ECUATORIANO I'} />
-        <Schedule time={'17H00 - 18H00'} name={'NOTICIERO ACTUALIDAD II'} />
-        <Schedule time={'18H00 - 19H00'} name={'ATARDECER ECUATORIANO II'} />
-        <Schedule time={'19H00 - 21H00'} name={'LOS TROPICALES DEL MOMENTO'} />
+        <ScheduleItem time={'15H00 - 16H00'} name={'ENTRE BALADA Y SALSA'} />
+        <ScheduleItem time={'16H00 - 16H30'} name={'MÉXICO LINDO'} />
+        <ScheduleItem time={'16H30 - 17H00'} name={'ATARDECER ECUATORIANO I'} />
+        <ScheduleItem time={'17H00 - 18H00'} name={'NOTICIERO ACTUALIDAD II'} />
+        <ScheduleItem
+          time={'18H00 - 19H00'}
+          name={'ATARDECER ECUATORIANO II'}
+        />
+        <ScheduleItem
+          time={'19H00 - 21H00'}
+          name={'LOS TROPICALES DEL MOMENTO'}
+        />
         <ScheduleSpecial
           time={'19H00 - 21H00'}
           name={'ROCKOLA DEL VIERNES (Viernes)'}
@@ -88,7 +100,7 @@ export function Schedule() {
       <div className='hosts__container'>
         <div className='hosts__header'>LOCUTORES</div>
 
-        <Host
+        <HostItem
           photo='/img-hosts/bismarck-cevallos.webp'
           name='Bismarck Cevallos'
           shows={[
@@ -103,7 +115,7 @@ export function Schedule() {
           ]}
         />
 
-        <Host
+        <HostItem
           photo='/img-hosts/victor-loor.webp'
           name='Victor Loor'
           shows={[
@@ -126,8 +138,8 @@ export function Schedule() {
           ]}
         />
 
-        <Host
-          photo='/img-hosts//edison-acosta.webp'
+        <HostItem
+          photo='/img-hosts/edison-acosta.webp'
           name='Edison Acosta'
           shows={[
             {
@@ -137,8 +149,7 @@ export function Schedule() {
           ]}
         />
 
-        <Host
-          photo=''
+        <HostItem
           name='Jimy Rivas'
           shows={[
             {
@@ -148,8 +159,7 @@ export function Schedule() {
           ]}
         />
 
-        <Host
-          photo=''
+        <HostItem
           name='Jhonny Manzaba'
           shows={[
             {
@@ -159,8 +169,7 @@ export function Schedule() {
           ]}
         />
 
-        <Host
-          photo=''
+        <HostItem
           name='Hugo Vélez'
           shows={[
             {

@@ -2,31 +2,6 @@ import '../assets/css/report-financial.css';
 import PropTypes from 'prop-types';
 
 export function ReportFinancial({ isReportOpen, setIsReportOpen }) {
-  ReportFinancial.propTypes = {
-    isReportOpen: PropTypes.bool.isRequired,
-    setIsReportOpen: PropTypes.func.isRequired,
-  };
-
-  const LinkDownload = ({ title, url }) => {
-    return (
-      <li>
-        <a
-          href={url}
-          rel='noopener noreferrer'
-          target='__blank'
-          className='report__download-link'
-        >
-          {title}
-        </a>
-      </li>
-    );
-  };
-
-  LinkDownload.propTypes = {
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-  };
-
   return (
     <section className='report__financial'>
       {isReportOpen && (
@@ -63,3 +38,28 @@ export function ReportFinancial({ isReportOpen, setIsReportOpen }) {
     </section>
   );
 }
+
+ReportFinancial.propTypes = {
+  isReportOpen: PropTypes.bool.isRequired,
+  setIsReportOpen: PropTypes.func.isRequired,
+};
+
+const LinkDownload = ({ title, url }) => {
+  return (
+    <li>
+      <a
+        href={url}
+        rel='noopener noreferrer'
+        target='_blank'
+        className='report__download-link'
+      >
+        {title}
+      </a>
+    </li>
+  );
+};
+
+LinkDownload.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
