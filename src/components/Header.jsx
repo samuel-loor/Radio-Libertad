@@ -19,7 +19,6 @@ export function Header({ onOpenReport }) {
   };
 
   return (
-    <>
       <header className='header__content'>
         <button className='header__button' onClick={toggleMenu}>
           <svg
@@ -63,6 +62,5 @@ export function Header({ onOpenReport }) {
           </ul>
         </nav>
       </header>
-    </>
   );
 }

@@ -24,7 +24,7 @@ export function AudioPlayer() {
       setIsPlaying(true);
     } else {
       audio.pause();
-      setIsPlaying(false);
+      setIsPlaying(false)
     }
   };
 
